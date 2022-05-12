@@ -1,0 +1,22 @@
+scalar Date
+
+type Reserve {
+  id: ID!
+  bookId: ID!
+  userName: String!
+  takeDate: Date!
+  devolutionDate: Date!
+}
+
+type Query {
+  getReserves: [Reserve!]!
+}
+
+type Mutation {
+  createReserve(
+    bookId: String!
+    takeDate: Date!
+    devolutionDate: Date!
+    userName: String!
+  ): Reserve!
+}
